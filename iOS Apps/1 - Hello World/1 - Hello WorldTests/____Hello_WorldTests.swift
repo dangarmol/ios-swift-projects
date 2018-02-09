@@ -1,15 +1,9 @@
-//
-//  HelloWorldTests.swift
-//  HelloWorldTests
-//
-//  Created by Daniel García Molero on 26/01/2018.
-//  Copyright © 2018 Daniel García Molero. All rights reserved.
-//
+//___FILEHEADER___
 
 import XCTest
-@testable import HelloWorld
+@testable import ___VARIABLE_productName:identifier___
 
-class HelloWorldTests: XCTestCase {
+class ___FILEBASENAMEASIDENTIFIER___: XCTestCase {
     
     override func setUp() {
         super.setUp()
