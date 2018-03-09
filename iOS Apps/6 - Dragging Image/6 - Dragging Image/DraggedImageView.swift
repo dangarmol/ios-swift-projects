@@ -12,6 +12,8 @@ class DraggedImageView: UIImageView {
 
     var startLocation: CGPoint? //Global variable and type (point in the screen).
     
+    var myGoogleDelegate: subviewDelegate?
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         //When touch begins, records the initial position.
         startLocation = touches.first?.location(in:self)
@@ -25,5 +27,8 @@ class DraggedImageView: UIImageView {
         
         //self.center = CGPointMake(self.center.x + dx, self.center.y + dy) //Old Swift Version, new version below.
         self.center = CGPoint(x: self.center.x + dx, y: self.center.y + dy)
+        
+        //This function can be called thanks to the delegate
+        self.myGoogleDelegate?.refreshCoordinates()
     }
 }

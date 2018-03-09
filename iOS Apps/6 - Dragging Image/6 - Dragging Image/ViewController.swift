@@ -8,10 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol subviewDelegate {
+    func refreshCoordinates()
+}
 
+class ViewController: UIViewController, subviewDelegate {
+
+    @IBOutlet weak var xDisplay: UITextField!
+    
+    @IBOutlet weak var yDisplay: UITextField!
+    
+    @IBOutlet weak var googleDragImage: DraggedImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        googleDragImage.myGoogleDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +31,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    func refreshCoordinates() {
+        xDisplay.text = "x coordinate: " + googleDragImage.center.x.description
+        yDisplay.text = "y coordinate: " + googleDragImage.center.x.description
+    }
 }
 
